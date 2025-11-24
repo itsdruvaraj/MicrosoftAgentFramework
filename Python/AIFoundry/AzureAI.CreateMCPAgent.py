@@ -3,7 +3,7 @@
 import asyncio
 from dotenv import load_dotenv
 
-from agent_framework import MCPStreamableHTTPTool
+from agent_framework import MCPStreamableHTTPTool, HostedMCPTool
 from agent_framework.azure import AzureAIAgentClient
 from azure.identity.aio import AzureCliCredential
 from pydantic import Field
@@ -14,12 +14,12 @@ Azure AI Agent with Microsoft Learn MCP Tool Example
 
 async def main():
 
-    mcpTools = MCPStreamableHTTPTool(
-        name="AgentFramework-MCPTool",
-        url="https://app-ext-eus2-mcp-profx-01.azurewebsites.net/mcp",
-        approval_mode="never_require",
-        headers={"Authorization": "Bearer <YOUR_BEARER_TOKEN>"},
-    )
+    mcpTools = HostedMCPTool(
+       name="my_mcp_tool",
+       description="MS Learn MCP",
+       url="https://learn.microsoft.com/api/mcp",
+       approval_mode="never_require",
+   )
 
     async with (
         AzureCliCredential() as credential,
@@ -29,7 +29,7 @@ async def main():
             tools=[mcpTools]
         ) as agent,
     ):
-        result = await agent.run("Multiply 456 and 457.")
+        result = await agent.run("New features in Azure Cosmos DB")
         print(result.text)
 
 if __name__ == "__main__":
