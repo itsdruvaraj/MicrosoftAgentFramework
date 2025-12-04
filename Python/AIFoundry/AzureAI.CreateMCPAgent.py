@@ -14,11 +14,12 @@ Azure AI Agent with Microsoft Learn MCP Tool Example
 
 async def main():
 
-    mcpTools = HostedMCPTool(
-       name="my_mcp_tool",
-       description="MS Learn MCP",
-       url="https://learn.microsoft.com/api/mcp",
+    mcpTools = MCPStreamableHTTPTool(
+       name="AgentFrameworkMCPTool2",
+       url="https://app-ext-eus2-mcp-profx-01.azurewebsites.net/mcp",
        approval_mode="never_require",
+       allowed_tools=["celsius_to_fahrenheit"],
+       headers={"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InJ0c0ZULWItN0x1WTdEVlllU05LY0lKN1ZuYyIsImtpZCI6InJ0c0ZULWItN0x1WTdEVlllU05LY0lKN1ZuYyJ9.eyJhdWQiOiJhcGk6Ly9hZjYzMzliYS02MzlkLTQ2MTYtYjk1OS04ZDk4NDhhNGZhYTMiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC85NzhiYmFkMi0wMzdmLTQ4NTktOGE3OC0zODVkMzZkMjY0ZWUvIiwiaWF0IjoxNzY0ODMxNzg2LCJuYmYiOjE3NjQ4MzE3ODYsImV4cCI6MTc2NDgzNTY4NiwiYWlvIjoiazJKZ1lKQ2VzUDlldDgxQi9XTnp3MjRXaXBibEFRQT0iLCJhcHBpZCI6ImFmNjMzOWJhLTYzOWQtNDYxNi1iOTU5LThkOTg0OGE0ZmFhMyIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0Lzk3OGJiYWQyLTAzN2YtNDg1OS04YTc4LTM4NWQzNmQyNjRlZS8iLCJvaWQiOiIyNzAyOTc3YS0wMTJlLTQ5MmUtYjhhNi04NTVjYTA0MjVhYzkiLCJyaCI6IjEuQVdNQjBycUxsMzhEV1VpS2VEaGROdEprN3JvNVk2LWRZeFpHdVZtTm1FaWstcVBJQVFCakFRLiIsInN1YiI6IjI3MDI5NzdhLTAxMmUtNDkyZS1iOGE2LTg1NWNhMDQyNWFjOSIsInRpZCI6Ijk3OGJiYWQyLTAzN2YtNDg1OS04YTc4LTM4NWQzNmQyNjRlZSIsInV0aSI6IkYzZlVJV1dYQWtDSURKNDJQZ0pQQVEiLCJ2ZXIiOiIxLjAiLCJ4bXNfZnRkIjoicDNYYVI1akRfbHBsdVFFcm5fRUc5OENESWR4YVRDLUszODliNy1VSk9NQUJkWE4zWlhOME15MWtjMjF6In0.ZD54-D3SiBtsNi8ULI-Hoz1ur4tk1lveyOx1v2WS_Gzpl1p7NmkmjpFo_xIRZV1OUVDyBnNX0KXrYdjOSqhCN_RwCQrH2FusZt9U6V4NhydjNmCavhLCdURAGAQHmvXVefSLqK8NvxHs2WM1_oR_KY-tFb2iOwd0teqXhwlkAEoU6CY-je_g18Jfcj-ImHdFXL8aI7XwZtmL9r1-T_N2jTduPXIfZ7tg0TM7deNPIJ5K__y50cNPCW9g2OT7Zip7bng97ojrvT0-vi3IyQh-_NZire_DtWtlHGTALunc31S0hg7GmIOPQaHVgUU6oP0djcBg4jL1EcRrMWi5mppdpg"},
    )
 
     async with (
@@ -29,7 +30,7 @@ async def main():
             tools=[mcpTools]
         ) as agent,
     ):
-        result = await agent.run("New features in Azure Cosmos DB")
+        result = await agent.run("Convert 100 degrees Celsius to Fahrenheit")
         print(result.text)
 
 if __name__ == "__main__":
