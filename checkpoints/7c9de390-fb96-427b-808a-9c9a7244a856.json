@@ -1,0 +1,105 @@
+{
+  "checkpoint_id": "7c9de390-fb96-427b-808a-9c9a7244a856",
+  "workflow_id": "49be7f9c-16e5-427b-9bd6-2ea0670014c4",
+  "timestamp": "2025-12-17T08:46:35.847175+00:00",
+  "messages": {
+    "to-conversation:CatalogAgent": [
+      {
+        "data": [
+          {
+            "__af_model__": "agent_framework._types:ChatMessage",
+            "strategy": "to_dict",
+            "value": {
+              "type": "chat_message",
+              "role": {
+                "type": "role",
+                "value": "user"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Process an order for a customer who wants: 3 Apples, 2 Oranges, and 1 Mango. First, get the product codes and prices from the catalog. Then create the order with the exact codes. Finally, generate an invoice showing all codes and the grand total."
+                }
+              ],
+              "additional_properties": {}
+            }
+          },
+          {
+            "__af_model__": "agent_framework._types:ChatMessage",
+            "strategy": "to_dict",
+            "value": {
+              "type": "chat_message",
+              "role": {
+                "type": "role",
+                "value": "assistant"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Product Codes and Prices from Catalog:\n- Apple: CODE: 93, PRICE: $1.50\n- Orange: CODE: 97, PRICE: $1.25\n- Mango: CODE: 76, PRICE: $2.00\n\nOrder Creation:\n- 3 Apples: CODE: 93\n- 2 Oranges: CODE: 97\n- 1 Mango: CODE: 76\n\nInvoice:\n\n| Product  | Quantity | Code | Unit Price | Total Price |\n|----------|----------|------|------------|-------------|\n| Apple    | 3        | 93   | $1.50      | $4.50       |\n| Orange   | 2        | 97   | $1.25      | $2.50       |\n| Mango    | 1        | 76   | $2.00      | $2.00       |\n\nGrand Total: $4.50 + $2.50 + $2.00 = $9.00"
+                }
+              ],
+              "author_name": "CatalogAgent",
+              "message_id": "run_1UbhW99STtv6zdiarQTJzeFF",
+              "additional_properties": {}
+            }
+          }
+        ],
+        "source_id": "to-conversation:CatalogAgent",
+        "target_id": null,
+        "type": "standard",
+        "trace_contexts": null,
+        "source_span_ids": null,
+        "original_request": null
+      }
+    ]
+  },
+  "shared_state": {
+    "_workflow_run_kwargs": {},
+    "_executor_state": {
+      "input-conversation": {},
+      "CatalogAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": "thread_ty8POqxi3Hw9BD5uR0x7U7qs",
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:CatalogAgent": {},
+      "OrderAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": null,
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:OrderAgent": {},
+      "InvoiceAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": null,
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:InvoiceAgent": {},
+      "end": {}
+    }
+  },
+  "pending_request_info_events": {},
+  "iteration_count": 2,
+  "metadata": {
+    "superstep": 2,
+    "checkpoint_type": "superstep",
+    "graph_signature": "a6b707a772a93fb4ee5cf532069ea162c7f436dbb6d24c88fa1aa165b200ef01"
+  },
+  "version": "1.0"
+}

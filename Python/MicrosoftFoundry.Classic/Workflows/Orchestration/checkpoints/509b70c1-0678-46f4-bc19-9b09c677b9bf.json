@@ -1,0 +1,53 @@
+{
+  "checkpoint_id": "509b70c1-0678-46f4-bc19-9b09c677b9bf",
+  "workflow_id": "1e8ae382-c731-40e8-9600-22cf53d69d7d",
+  "timestamp": "2025-12-17T08:55:05.636179+00:00",
+  "messages": {},
+  "shared_state": {
+    "_executor_state": {
+      "input-conversation": {},
+      "CatalogAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": "thread_BTWx7kKH11q03UmhDTiK00uZ",
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:CatalogAgent": {},
+      "OrderAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": "thread_txkmKnIEBurWI3tPdEgy95tY",
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:OrderAgent": {},
+      "InvoiceAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": "thread_NBIhjkRaSYZ37zWuSQE48ymy",
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:InvoiceAgent": {},
+      "end": {}
+    }
+  },
+  "pending_request_info_events": {},
+  "iteration_count": 7,
+  "metadata": {
+    "superstep": 7,
+    "checkpoint_type": "superstep",
+    "graph_signature": "a6b707a772a93fb4ee5cf532069ea162c7f436dbb6d24c88fa1aa165b200ef01"
+  },
+  "version": "1.0"
+}

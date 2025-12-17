@@ -1,0 +1,124 @@
+{
+  "checkpoint_id": "a6d45d6c-4247-46b4-9087-c8cf4a374c36",
+  "workflow_id": "1e8ae382-c731-40e8-9600-22cf53d69d7d",
+  "timestamp": "2025-12-17T08:54:56.659081+00:00",
+  "messages": {
+    "to-conversation:OrderAgent": [
+      {
+        "data": [
+          {
+            "__af_model__": "agent_framework._types:ChatMessage",
+            "strategy": "to_dict",
+            "value": {
+              "type": "chat_message",
+              "role": {
+                "type": "role",
+                "value": "user"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Process an order for a customer who wants: 3 Apples, 2 Oranges, and 1 Mango. First, get the product codes and prices from the catalog. Then create the order with the exact codes. Finally, generate an invoice showing all codes and the grand total."
+                }
+              ],
+              "additional_properties": {}
+            }
+          },
+          {
+            "__af_model__": "agent_framework._types:ChatMessage",
+            "strategy": "to_dict",
+            "value": {
+              "type": "chat_message",
+              "role": {
+                "type": "role",
+                "value": "assistant"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Here are the product codes and prices from the catalog:\n\n- Apple: Code 93, Price $1.50\n- Orange: Code 97, Price $1.25\n- Mango: Code 76, Price $2.00\n\nOrder:\n\n- 3 Apples (Code: 93, Price: $1.50 each)\n- 2 Oranges (Code: 97, Price: $1.25 each)\n- 1 Mango (Code: 76, Price: $2.00 each)\n\nInvoice:\n\n| PRODUCT | CODE | QTY | UNIT PRICE | TOTAL |\n|---------|------|-----|------------|-------|\n| Apple   | 93   | 3   | $1.50      | $4.50 |\n| Orange  | 97   | 2   | $1.25      | $2.50 |\n| Mango   | 76   | 1   | $2.00      | $2.00 |\n\nGrand Total: $4.50 + $2.50 + $2.00 = **$9.00**"
+                }
+              ],
+              "author_name": "CatalogAgent",
+              "message_id": "run_2gt5paG9YbqDLXCkCNNMURY9",
+              "additional_properties": {}
+            }
+          },
+          {
+            "__af_model__": "agent_framework._types:ChatMessage",
+            "strategy": "to_dict",
+            "value": {
+              "type": "chat_message",
+              "role": {
+                "type": "role",
+                "value": "assistant"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Order:\n\nITEM: Apple (Code: 93) x 3 = $4.50  \nITEM: Orange (Code: 97) x 2 = $2.50  \nITEM: Mango (Code: 76) x 1 = $2.00  \n\n**Grand Total: $9.00**"
+                }
+              ],
+              "author_name": "OrderAgent",
+              "message_id": "run_QZbQ9o2Yx7xp8z9hVLhQ2Yjo",
+              "additional_properties": {}
+            }
+          }
+        ],
+        "source_id": "to-conversation:OrderAgent",
+        "target_id": null,
+        "type": "standard",
+        "trace_contexts": null,
+        "source_span_ids": null,
+        "original_request": null
+      }
+    ]
+  },
+  "shared_state": {
+    "_executor_state": {
+      "input-conversation": {},
+      "CatalogAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": "thread_BTWx7kKH11q03UmhDTiK00uZ",
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:CatalogAgent": {},
+      "OrderAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": "thread_txkmKnIEBurWI3tPdEgy95tY",
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:OrderAgent": {},
+      "InvoiceAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": null,
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:InvoiceAgent": {},
+      "end": {}
+    }
+  },
+  "pending_request_info_events": {},
+  "iteration_count": 4,
+  "metadata": {
+    "superstep": 4,
+    "checkpoint_type": "superstep",
+    "graph_signature": "a6b707a772a93fb4ee5cf532069ea162c7f436dbb6d24c88fa1aa165b200ef01"
+  },
+  "version": "1.0"
+}

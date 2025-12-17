@@ -24,7 +24,7 @@ async def main():
 
     async with (
         AzureCliCredential() as credential,
-        AzureAIAgentClient(async_credential=credential,should_cleanup_agent=False).create_agent(
+        AzureAIAgentClient(credential=credential,should_cleanup_agent=False).create_agent(
             name="AgentFramework-MCPAgent",
             instructions="You are a utility agent, answer questions based on the utilities available to you!",
             tools=[mcpTools]

@@ -18,7 +18,7 @@ async def main():
         AzureCliCredential() as credential,
         ChatAgent(
             chat_client=AzureAIAgentClient(
-                async_credential=credential, 
+                credential=credential, 
                 agent_id="asst_U2bDCEO78J8KmkCyA6rn1yyH"
             ),
             tools=[MCPStreamableHTTPTool(

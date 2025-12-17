@@ -1,0 +1,85 @@
+{
+  "checkpoint_id": "4fe686fc-8553-41ec-8cef-a8ed689b7a45",
+  "workflow_id": "49be7f9c-16e5-427b-9bd6-2ea0670014c4",
+  "timestamp": "2025-12-17T08:45:16.300915+00:00",
+  "messages": {
+    "input-conversation": [
+      {
+        "data": [
+          {
+            "__af_model__": "agent_framework._types:ChatMessage",
+            "strategy": "to_dict",
+            "value": {
+              "type": "chat_message",
+              "role": {
+                "type": "role",
+                "value": "user"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Process an order for a customer who wants: 3 Apples, 2 Oranges, and 1 Mango. First, get the product codes and prices from the catalog. Then create the order with the exact codes. Finally, generate an invoice showing all codes and the grand total."
+                }
+              ],
+              "additional_properties": {}
+            }
+          }
+        ],
+        "source_id": "input-conversation",
+        "target_id": null,
+        "type": "standard",
+        "trace_contexts": null,
+        "source_span_ids": null,
+        "original_request": null
+      }
+    ]
+  },
+  "shared_state": {
+    "_workflow_run_kwargs": {},
+    "_executor_state": {
+      "input-conversation": {},
+      "CatalogAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": null,
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:CatalogAgent": {},
+      "OrderAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": null,
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:OrderAgent": {},
+      "InvoiceAgent": {
+        "cache": [],
+        "agent_thread": {
+          "type": "agent_thread_state",
+          "service_thread_id": null,
+          "chat_message_store_state": null
+        },
+        "pending_agent_requests": {},
+        "pending_responses_to_agent": []
+      },
+      "to-conversation:InvoiceAgent": {},
+      "end": {}
+    }
+  },
+  "pending_request_info_events": {},
+  "iteration_count": 0,
+  "metadata": {
+    "superstep": 0,
+    "checkpoint_type": "initial",
+    "graph_signature": "a6b707a772a93fb4ee5cf532069ea162c7f436dbb6d24c88fa1aa165b200ef01"
+  },
+  "version": "1.0"
+}

@@ -57,13 +57,13 @@ async def main():
     async with (
         AzureCliCredential() as credential,
         ChatAgent(
-            chat_client=AzureAIAgentClient(async_credential=credential, agent_id="asst_fhH1VfpWaqDAr8EbK1XDhXMl"),
+            chat_client=AzureAIAgentClient(credential=credential, agent_id="asst_fhH1VfpWaqDAr8EbK1XDhXMl"),
             name="MathAgent",
             tools=[mcpTools1],
         ) as mathAgent,
 
         ChatAgent(
-            chat_client=AzureAIAgentClient(async_credential=credential, agent_id="asst_atFufdef4cnJMbtUPs9VeH6E"),
+            chat_client=AzureAIAgentClient(credential=credential, agent_id="asst_atFufdef4cnJMbtUPs9VeH6E"),
             name="TemperatureConversionAgent",
             tools=[mcpTools2],
         ) as tempAgent,

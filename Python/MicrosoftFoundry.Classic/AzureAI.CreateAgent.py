@@ -14,7 +14,7 @@ Azure AI Agent Basic Example
 async def main():
     async with (
         AzureCliCredential() as credential,
-        AzureAIAgentClient(async_credential=credential,should_cleanup_agent=False).create_agent(
+        AzureAIAgentClient(credential=credential,should_cleanup_agent=False).create_agent(
             name="AgentFramework-BasicAgent",
             instructions="You are just a basic agent created with Microsoft Agent Framework, that can talk about AI agents!",
         ) as agent,
