@@ -1,0 +1,9 @@
+# Core Agent Framework (without all extras to avoid Rust compilation)
+agent-framework-core>=1.0.0b251223
+agent-framework-azure-ai>=1.0.0b251223
+
+# Hosting adapter for Foundry
+azure-ai-agentserver-agentframework>=1.0.0b7
+
+# Azure authentication
+azure-identity>=1.25.0

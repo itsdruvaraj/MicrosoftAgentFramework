@@ -1,0 +1,18 @@
+# Agent definition for Azure Developer CLI (azd) deployment
+name: simple-agent
+description: A simple conversational agent for demonstration purposes
+
+# Container configuration
+container:
+  dockerfile: Dockerfile
+  context: .
+
+# Resource allocation
+resources:
+  cpu: "1"
+  memory: "2Gi"
+
+# Environment variables (set during deployment)
+environment:
+  AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT}
+  AZURE_OPENAI_DEPLOYMENT_NAME: ${AZURE_OPENAI_DEPLOYMENT_NAME}

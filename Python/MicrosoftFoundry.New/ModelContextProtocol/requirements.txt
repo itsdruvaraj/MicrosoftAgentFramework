@@ -1,0 +1,2 @@
+agent-framework==1.0.0b260116
+azure-identity==1.25.1
